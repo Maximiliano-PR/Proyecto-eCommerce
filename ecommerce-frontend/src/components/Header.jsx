@@ -24,10 +24,12 @@ function Header() {
                             Terminos
                         </Button>
                     </Link>
-                    <Button
-                        sx={{my: 2, marginRight: 3, color: 'white', display: 'block', border: 2}}>
-                        Contacto
-                    </Button>
+                    <Link to='/Contact' style={{ textDecoration: "none", color: "inherit" }}>
+                        <Button
+                            sx={{my: 2, marginRight: 3, color: 'white', display: 'block', border: 2}}>
+                            Contacto
+                        </Button>
+                    </Link>
                     <Button
                         sx={{my: 2, marginRight: 3, color: 'white', display: 'block', border: 2}}>
                         Acerca de
