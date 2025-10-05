@@ -8,10 +8,12 @@ import Footer from './components/Footer';
 import PageHome from './pages/pageHome';
 import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage'
+import { CartProvider } from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <CartProvider>
     <Header></Header>
     <Routes>
       <Route path='/' element={<PageHome/>}/>
@@ -19,6 +21,7 @@ root.render(
       <Route path='/Contact' element={<ContactPage/>}/>
     </Routes>
     <Footer/>
+  </CartProvider>
   </BrowserRouter>
 );
 

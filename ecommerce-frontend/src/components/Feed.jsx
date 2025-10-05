@@ -1,7 +1,12 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, Typography, CardMedia} from "@mui/material"
+import { Card, CardContent, CardHeader, Typography, CardMedia, Tooltip, IconButton} from "@mui/material"
+import { useCart } from '../context/CartContext'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 
 function Feed(props) {
+
+    const { addToCart } = useCart();
+
     return(
         <div style={style.feed}>
             <Card sx={{ maxWidth: 345 }}>
@@ -21,6 +26,11 @@ function Feed(props) {
                     <p>
                         {props.product.price}
                     </p>
+                    <Tooltip>
+                        <IconButton onClick={() => addToCart(props.product)} color='primary' aria-label='Agregar Producto'>
+                            <AddShoppingCartIcon/>
+                        </IconButton>
+                    </Tooltip>
                 </CardContent>
             </Card>
 

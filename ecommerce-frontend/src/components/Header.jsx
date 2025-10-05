@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { AppBar, Container, Divider, IconButton, Toolbar, Typography, Button, Box } from '@mui/material'
-
+import Cart from '../components/Cart'
 
 function Header() {
   return (
@@ -35,6 +35,10 @@ function Header() {
                         Acerca de
                     </Button>
                 </Box>
+
+                <span>
+                    <Cart></Cart>
+                </span>
             </Toolbar>
         </AppBar> 
         <Divider style={{marginBottom: 20}}></Divider>
