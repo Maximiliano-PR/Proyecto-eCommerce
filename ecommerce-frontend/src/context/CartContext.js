@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
                     if (cartItem.product._id === product._id) {
                         return { ...cartItem, quantity: cartItem.quantity + 1}
                     }
-                    return cartItem; 
+                    return cartItem;   
                 });
                 setCart(updatedCart);
             }
