@@ -11,7 +11,7 @@ function Header() {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
                     Tienda Online
                 </Typography>
-                <Box sx={{flexGrow:1, display: {xs: 'none', md: 'flex'}}}>
+                <Box sx={{flexGrow:1, display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
                     <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
                         <Button
                             sx={{my: 2, marginRight: 3, color: 'white', display: 'block', border: 2}}>
@@ -30,15 +30,17 @@ function Header() {
                             Contacto
                         </Button>
                     </Link>
-                    <Button
-                        sx={{my: 2, marginRight: 3, color: 'white', display: 'block', border: 2}}>
-                        Acerca de
-                    </Button>
+                    <span>
+                        <Cart sx={{my: 2, marginRight: 3, color: 'white', display: 'block', border: 2}}></Cart>
+                    </span>
                 </Box>
 
-                <span>
-                    <Cart></Cart>
-                </span>
+                <Link to='/panel' style={{ textDecoration: "none", color: "inherit" }}>
+                    <Button 
+                        sx={{my: 2, marginRight: 3, color: 'white', display: 'block', border: 2}}>
+                        Acceso Admin
+                    </Button>
+                </Link>
             </Toolbar>
         </AppBar> 
         <Divider style={{marginBottom: 20}}></Divider>

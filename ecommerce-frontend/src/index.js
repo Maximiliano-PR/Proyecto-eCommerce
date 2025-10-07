@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import PageHome from './pages/pageHome';
 import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage'
+import PanelPage from './pages/PanelPage';
 import { CartProvider } from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +20,7 @@ root.render(
       <Route path='/' element={<PageHome/>}/>
       <Route path='/Terminos' element={<FaqPage/>}/>
       <Route path='/Contact' element={<ContactPage/>}/>
+      <Route path='/Panel' element={<PanelPage/>}/>
     </Routes>
     <Footer/>
   </CartProvider>
