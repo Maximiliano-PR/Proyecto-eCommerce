@@ -10,19 +10,27 @@ import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage'
 import PanelPage from './pages/PanelPage';
 import { CartProvider } from './context/CartContext';
+import { AuthProvider } from './context/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
+import Login from './pages/LoginPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <CartProvider>
-    <Header></Header>
-    <Routes>
-      <Route path='/' element={<PageHome/>}/>
-      <Route path='/Terminos' element={<FaqPage/>}/>
-      <Route path='/Contact' element={<ContactPage/>}/>
-      <Route path='/Panel' element={<PanelPage/>}/>
-    </Routes>
-    <Footer/>
+    <AuthProvider>
+      <Header></Header>
+      <Routes>
+        <Route path='/' element={<PageHome/>}/>
+        <Route path='/Terminos' element={<FaqPage/>}/>
+        <Route path='/Contact' element={<ContactPage/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route element={<PrivateRoute/>}>
+          <Route path="/Panel" element={<PanelPage/>}/>
+        </Route>
+      </Routes>
+      <Footer/>
+    </AuthProvider>
   </CartProvider>
   </BrowserRouter>
 );
