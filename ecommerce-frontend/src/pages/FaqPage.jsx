@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Container } from '@mui/material';
+import Loader from '../components/Loader'
 
 export default function FaqPage() {
   return (

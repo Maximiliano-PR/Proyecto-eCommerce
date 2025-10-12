@@ -1,7 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import { Container, Button, AppBar, TextField, IconButton, Toolbar, Typography } from '@mui/material'
+import Loader from '../components/Loader'
 
 function ContactPage() {
+
+    const [load, setLoad] = useState(false)
+
+    const handleLoad = () => {
+        setLoad(true)
+        setTimeout(() => {
+            setLoad(false)
+        }, 1000)
+        
+    }
+    
 
     const [contact, setContact] = useState({
         name: '',
@@ -24,7 +36,11 @@ function ContactPage() {
 
   return (
     <Container sx={{marginTop: '20px'}}>
-        <form onSubmit={handleSubmit}>
+        {
+            load ?
+            <Loader></Loader>
+            :
+            <form onSubmit={handleSubmit}>
             <TextField fullWidth
             label="Nombre"
             margin='normal'
@@ -61,6 +77,7 @@ function ContactPage() {
             />
             <Button variant='contained' type='Submit' sx={{mt:2}}>Enviar</Button>
         </form>
+        }
     </Container>
   )
 }
